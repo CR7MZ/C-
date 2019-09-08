@@ -1,5 +1,5 @@
 #include<stdio.h>
-int Partion(int*a, int left,int right )//快速排序
+int Partion(int*a, int left,int right )//有一个数组a，用快速排序法，求出数组中前K个最小的数字
 {
 	int tmp = a[left];
 	if (a == NULL)
