@@ -30,7 +30,7 @@ void Init()//把二维数组都赋值为' '。棋盘初始化全为空格。
 void Printf()
 {
 	int row = 0;
-	for ( row = 0; row < ROW; row++)
+	for (row = 0; row < ROW; row++)
 	{
 		printf("| %c | %c | %c |\n", g_arr[row][0], g_arr[row][1], g_arr[row][2]);
 		printf("|___|___|___|\n");
@@ -41,11 +41,11 @@ Playermove()
 	printf("玩家落子");
 	while (1)
 	{
-		
+
 		int row = 0, col = 0;
 		printf("请输入坐标：");
 		scanf("%d %d", &row, &col);
-		if (row<0 || row>=ROW || col<0 || col>=COL)
+		if (row<0 || row >= ROW || col<0 || col >= COL)
 		{
 			printf("输入不合法，请重新输入!\n");
 			continue;
@@ -109,11 +109,11 @@ char checkwinner()
 		}
 	}
 	//检查所有的对角线
-	if (g_arr[0][0] == g_arr[1][1] && g_arr[0][0] == g_arr[2][2] && g_arr[0][0]!=' ')
+	if (g_arr[0][0] == g_arr[1][1] && g_arr[0][0] == g_arr[2][2] && g_arr[0][0] != ' ')
 	{
 		return g_arr[0][0];
 	}
-	if (g_arr[2][0] == g_arr[1][1] && g_arr[2][0] == g_arr[0][2] && g_arr[2][0]!=' ')
+	if (g_arr[2][0] == g_arr[1][1] && g_arr[2][0] == g_arr[0][2] && g_arr[2][0] != ' ')
 	{
 		return g_arr[2][0];
 	}
@@ -135,7 +135,7 @@ int main()
 		Playermove();
 		winner = checkwinner();
 		if (winner != ' ')
-		{ 
+		{
 			break;
 		}
 		Computermove();
@@ -147,13 +147,16 @@ int main()
 	}
 	if (winner == 'x')
 	{
+		Printf();
 		printf("你赢了\n");
 	}
 	else if (winner == 'o')
 	{
+		Printf();
 		printf("你输了！\n");
+
 	}
-	else 
+	else
 	{
 		printf("你和电脑平局\n");
 	}
