@@ -32,4 +32,5 @@ void SListPrint(SListNode* phead);//打印
 
 void SListReverse(SListNode **pphead);//翻转链表第一种方法
 void SListReverse2(SListNode **pphead);//翻转链表第二种方法
+
 #endif /*_SLIST_H_*/

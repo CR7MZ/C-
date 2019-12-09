@@ -121,7 +121,6 @@ void SListReverse(SListNode **pphead)
 	SListNode *head = *pphead;   //此指针在每次循环中始终指向当前链表的头
 	SListNode *tmp = head->next; //此指针在每次循环中始终指向要被后删头插的节点
 	SListNode *oldh = *pphead;   //此指针在每次循环中始终指向原本的头结点，不会改变指向
-
 	while (tmp) //如果tmp为空，则代表逆序结束，旧头的next已经是空的了，成为新链表的末尾
 	{
 		oldh->next = tmp->next; //将tmp架空，实际是后删操作的一部分
@@ -136,7 +135,6 @@ void SListReverse2(SListNode **pphead)
 	SListNode *pre = *pphead;   //被执行操作的前一个节点
 	SListNode *cur = pre->next; //被执行操作的节点
 	SListNode *next = cur;      //被执行操作的后一个节点，暂时指在cur，在循环开始的时候跳转到其后一个节点
-
 	pre->next = NULL; //此时的头，将会是转换后的尾，这里是在设置链表尾节点
 	while (next)
 	{
@@ -148,3 +146,4 @@ void SListReverse2(SListNode **pphead)
 
 	*pphead = pre; //循环跳出后cur和next都已经指向空了，pre才是新的头
 }
+
