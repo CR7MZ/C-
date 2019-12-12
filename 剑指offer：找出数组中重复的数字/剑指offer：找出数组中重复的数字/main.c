@@ -1,5 +1,6 @@
 #include<stdio.h>//要求时间复杂度 O(N)，空间复杂度 O(1)。因此不能使用排序的方法，也不能使用额外的标记数组。
 //对于这种数组元素在[0, n - 1] 范围内的问题，可以将值为 i 的元素调整到第 i 个位置上进行求解。
+
 void  My_swap(int* arr, int i, int j)
 {
 	int tmp = arr[i];
@@ -16,7 +17,7 @@ int  CheckNumber(int* arr,int len)
 	{
 		while (arr[i] != i)
 		{
-			if (arr[i] == arr[arr[i]])
+			if (arr[i] == arr[arr[i]])//如果i为下标的元素和以i为下标里的元素为下表标的元素相等，则代表有重复的数字
 			{
 				return 1;
 			}
